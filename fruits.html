@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="side_bar">
+        <div class="logo_container">
+            <div class="logo">
+                <img src="images/logo.png" alt="" srcset="">
+                <span>Fruits</span>
+            </div>
+            <i class='bx bx-menu' id="menu_drop" onclick="side_show()"></i>
+        </div>
+        <ul>
+            <div id="hj">
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-home'></i>
+                        <span class="side_item"><a href="home.html">Home</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-lemon'></i>
+                        <span class="side_item"><a href="vegetables.html">Vegetables</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-fridge'></i>
+                        <span class="side_item"><a href="#">Home Appliances</a></span>
+                    </div>
+                </li>
+            </div>
+            <li>
+                <div class="side_list" onclick="toggleCategory()">
+                    <i class='bx bxs-category'></i>
+                    <span class="side_item">Category</span>
+                    <i class='bx bxs-down-arrow' id="cat_drop"></i>
+                    <i class='bx bxs-up-arrow' id="cat_up"></i>
+                </div>
+                <div class="Category_list" id="cat_list">
+                    <ul>
+                        <li class="cat_item"><a href="#Citrus Fruits">Citrus Fruits</a></li>
+                        <li class="cat_item"><a href="#Berries">Berries</a></li>
+                        <li class="cat_item"><a href="#Stone Fruits">Stone Fruits</a></li>
+                        <li class="cat_item"><a href="#Tropical Fruits">Tropical Fruits</a></li>
+                        <li class="cat_item"><a href="#Pome Fruits">Pome Fruits</a></li>
+                        <li class="cat_item"><a href="#Melons">Melons</a></li>
+                        <li class="cat_item"><a href="#Exotic Fruits">Exotic Fruits</a></li>
+                        <li class="cat_item"><a href="#Dry Fruits">Dry Fruits</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="side_list" onclick="toggleFilter()">
+                    <i class='bx bx-filter-alt'></i>
+                    <span class="side_item">Filters</span>
+                    <i class='bx bxs-down-arrow' id="fil_drop"></i>
+                    <i class='bx bxs-up-arrow' id="fil_up"></i>
+                </div>
+                <div class="filter_list" id="fil_list">
+                    <ul>
+                        <li class="filter_item price_toggle" onclick="togglePriceRange()">
+                            <span>Price Range</span>
+                            <i class='bx bxs-down-arrow' id="price_drop"></i>
+                            <i class='bx bxs-up-arrow' id="price_up" style="display: none;"></i>
+                        </li>
+                        <div class="price_range" id="price_range">
+                            <li class="price_item"><span><input type="checkbox" class="price_check">Below ₹100</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹100 - ₹300</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹300 - ₹900</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹900 and above</span></li>
+                        </div>
+                        <li class="filter_item rating_toggle" onclick="toggleRating()">
+                            <span>Best For</span>
+                            <i class='bx bxs-down-arrow' id="rating_drop"></i>
+                            <i class='bx bxs-up-arrow' id="rating_up" style="display: none;"></i>
+                        </li>
+                        <div class="rating_range" id="rating_range">
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">Juicing</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">Baking</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">Snacking</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">Smoothies</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">Salad-Friendly</span></li>
+                        </div>
+                        <li class="filter_item nutrition_toggle" onclick="toggleNutritionalValue()">
+                            <span>Nutritional Value</span>
+                            <i class='bx bxs-down-arrow' id="nutrition_drop"></i>
+                            <i class='bx bxs-up-arrow' id="nutrition_up" style="display: none;"></i>
+                        </li>
+                        <div class="nutrition_range" id="nutrition_range">
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">Low Calories</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">High Fiber</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">High in Vit C</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">Rich in Antioxidants</span></li>
+                        </div>
+                    </ul>
+                </div>
+            </li> <li>
+                <div class="side_list">
+                    <i class='bx bxs-offer'></i>
+                    <a href="#offer"><span class="side_item">Special Offers</span></a>
+                </div>
+            </li>
+            <li>
+                <div class="side_list">
+                    <i class='bx bxs-objects-horizontal-left'></i>
+                    <a href="#popular"><span class="side_item">Popular Items</span></a>
+                </div>
+            </li>
+            <li>
+                <div class="side_list">
+                    <i class='bx bx-log-out'></i>
+                    <span class="side_item">Log out</span>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <div class="main_content">
+        <header class="header">
+            <div class="search_box">
+                <div class="search_bar">
+                    <i class='bx bx-search'></i>
+                    <input type="text" class="search_input" placeholder="Search your vegetables...">
+                    <button class="search_btn">Search</button>
+                </div>
+            </div>
+            <div class="header_nav" id="header_navi">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="#">Kitchen Appliances</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="hero_section">
+            <div class="hero_description">
+                <h1>Nature's Sweetest Harvest,<br> Delivered to Your Doorstep</h1>
+                <h3>Discover Freshness with Every Bite</h3>
+                <p>Indulge in the vibrant colors and flavors of the freshest fruits, handpicked to perfection. 
+                    From tropical treasures to everyday favorites, our fruits are packed with nutrients and sweetness. 
+                    Savor nature's finest offerings and elevate your health with every delicious bite. 
+                    Explore our wide selection and bring home the essence of freshness today.</p>
+
+            </div>
+            <div class="hero_image">
+                <img src="images/fresh__1_-removebg-preview.png" alt="">
+            </div>
+        </section>
+        <section class="our_products">
+            <h1 class="our_title">Our Products</h1>
+            <section class="product_section" id="popular">
+                <h1 class="product_title">Popular Items</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Mango.jpg" alt="" class="product_image">
+                        <img src="images/Mango1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Mango</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">140 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Guava.jpg" alt="" class="product_image">
+                        <img src="images/Guava1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Guava</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">90 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Papaya.jpg" class="product_image">
+                        <img src="images/Papaya1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Papaya</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">70</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product_item">
+                        <img src="images/Apple1.jpg" class="product_image">
+                        <img src="images/Apple.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Apple</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">180 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section> 
+            <section class="product_section" id="offer">
+                <h1 class="product_title">Todays Special Offers</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Tangerine1.jpg" alt="" class="product_image">
+                        <img src="images/Tangerine.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Tangerine</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">120</span> 
+                                <span class="original-price">84 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product_item">
+                        <img src="images/Blackberry.jpg" alt="" class="product_image">
+                        <img src="images/Blackberry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Blackberry</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">900 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Banana.jpg" alt="" class="product_image">
+                        <img src="images/Banana1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Banana</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">50 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Dragon Fruit.jpg" alt="" class="product_image">
+                        <img src="images/Dragon Fruit1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Dragon Fruit</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">270 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Loquat1.jpg" alt="" class="product_image">
+                        <img src="images/Loquat.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Loquat</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">210 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cherry.jpg" alt="" class="product_image">
+                        <img src="images/Cherry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cherry</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">600</span> 
+                                <span class="original-price">450 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Passion Fruit.jpg" alt="" class="product_image">
+                        <img src="images/Passion Fruit1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Passion Fruit</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">160 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Apricot1.jpg" alt="" class="product_image">
+                        <img src="images/Apricot.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Apricot</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">280 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </section> 
+            <section class="product_section" id="Citrus Fruits">
+                <h1 class="product_title">Citrus Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Orange.jpg" class="product_image">
+                        <img src="images/Orange1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Orange</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">90 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Lemon.jpg" alt="" class="product_image">
+                        <img src="images/Lemon1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Lemon</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">75 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Lime1.jpg" alt="" class="product_image">
+                        <img src="images/Lime.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Lime</h4>
+                            <p>
+                                <span class="offer-text">Offer 27%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">82</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Tangerine1.jpg" alt="" class="product_image">
+                        <img src="images/Tangerine.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Tangerine</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">120</span> 
+                                <span class="original-price">84 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>  
+            <section class="product_section" id="Berries">
+                <h1 class="product_title">Berries</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Strawberry.jpg" class="product_image">
+                        <img src="images/Strawberry1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Strawberry</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">250</span> 
+                                <span class="original-price">225 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Blueberry.jpg" alt="" class="product_image">
+                        <img src="images/Blueberry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Blueberry</h4>
+                            <p>
+                                <span class="offer-text">Offer 5%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">500</span> 
+                                <span class="original-price">475 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Raspberry.jpg" alt="" class="product_image">
+                        <img src="images/Raspberry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Raspberry</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1200</span> 
+                                <span class="original-price">960 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Blackberry.jpg" alt="" class="product_image">
+                        <img src="images/Blackberry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Blackberry</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">900 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>  
+            <section class="product_section" id="Stone Fruits">
+                <h1 class="product_title">Stone Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Peach.jpg" class="product_image">
+                        <img src="images/Peach1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Peach</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">360 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cherry.jpg" alt="" class="product_image">
+                        <img src="images/Cherry1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cherry</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">600</span> 
+                                <span class="original-price">450 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Plum.jpg" alt="" class="product_image">
+                        <img src="images/Plum1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Plum</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">320</span> 
+                                <span class="original-price">288 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Apricot1.jpg" alt="" class="product_image">
+                        <img src="images/Apricot.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Apricot</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">280 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Tropical Fruits">
+                <h1 class="product_title">Tropical Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Pineapple1.jpg" class="product_image">
+                        <img src="images/Pineapple.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pineapple</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">70</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Banana.jpg" alt="" class="product_image">
+                        <img src="images/Banana1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Banana</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">50 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Papaya.jpg" class="product_image">
+                        <img src="images/Papaya1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Papaya</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">70</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Mango.jpg" alt="" class="product_image">
+                        <img src="images/Mango1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Mango</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">140 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Coconut.jpg" alt="" class="product_image">
+                        <img src="images/Coconut1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Tender Cocount</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">120</span> 
+                                <span class="original-price">108 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Guava.jpg" alt="" class="product_image">
+                        <img src="images/Guava1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Guava</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">90 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Passion Fruit.jpg" alt="" class="product_image">
+                        <img src="images/Passion Fruit1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Passion Fruit</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">160 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Rambutan.jpg" alt="" class="product_image">
+                        <img src="images/Rambutan1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Rambutan</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">250</span> 
+                                <span class="original-price">187.5 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Pome Fruits">
+                <h1 class="product_title">Pome Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Apple1.jpg" class="product_image">
+                        <img src="images/Apple.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Apple</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">180 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Pear.jpg" alt="" class="product_image">
+                        <img src="images/Pear1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pear</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">75 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Quince.jpg" alt="" class="product_image">
+                        <img src="images/Quince1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Quince</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">220</span> 
+                                <span class="original-price">198 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Loquat1.jpg" alt="" class="product_image">
+                        <img src="images/Loquat.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Loquat</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">210 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Melons">
+                <h1 class="product_title">Melons</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Watermelon.jpg" class="product_image">
+                        <img src="images/Watermelon1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Watermelon</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">70</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cantaloupe.jpg" alt="" class="product_image">
+                        <img src="images/Cantaloupe1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cantaloupe</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">75 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Honeydew.jpg" alt="" class="product_image">
+                        <img src="images/Honeydew1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Honeydew</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">80</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Charentais Melon1.jpg" alt="" class="product_image">
+                        <img src="images/Charentais Melon.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Charentais Melon</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Exotic Fruits">
+                <h1 class="product_title">Exotic Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Dragon Fruit.jpg" alt="" class="product_image">
+                        <img src="images/Dragon Fruit1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Dragon Fruit</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">270 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Lychee1.jpg" alt="" class="product_image">
+                        <img src="images/Lychee.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Lychee</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">150 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Durian,.jpg" alt="" class="product_image">
+                        <img src="images/Durian,1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Durian</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">180</span> 
+                                <span class="original-price">162 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Mangosteen.jpg" alt="" class="product_image">
+                        <img src="images/Mangosteen1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Mangosteen</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">210 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Dry Fruits">
+                <h1 class="product_title">Dry Fruits</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Almond.jpg" class="product_image">
+                        <img src="images/Almond1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Almond</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">270 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Walnut1.jpg" alt="" class="product_image">
+                        <img src="images/Walnut.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Walnut</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">300 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cashews1.jpg" alt="" class="product_image">
+                        <img src="images/Cashews.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cashews</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">900</span> 
+                                <span class="original-price">810 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Dates.jpg" alt="" class="product_image">
+                        <img src="images/Dates1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Dates</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">320 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+        </section>
+        
+    </div>
+    <script src="common.js"></script>
+</body>
+</html>
