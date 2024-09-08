@@ -274,7 +274,8 @@
 #price_range .price_item{
     margin-left: 20px;
 }
-.rating_toggle:hover i{
+.rating_toggle:hover i,
+.nutrition_toggle:hover i{
     color: black;
 }
 
@@ -510,6 +511,10 @@
     .hero_image img{
         width: 150px;
         height: 200px;
+    }
+    .hero_image .fruit_banner{
+        width: 200px;
+        height: 150px;
     }
     .side_bar.active ~ .main_content .hero_image{
         display: none;

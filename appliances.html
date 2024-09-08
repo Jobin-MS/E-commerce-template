@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocer & Gear</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="side_bar">
+        <div class="logo_container">
+            <div class="logo">
+                <img src="images/logo.png" alt="" srcset="">
+                <span>Grocer & Gear</span>
+            </div>
+            <i class='bx bx-menu' id="menu_drop" onclick="side_show()"></i>
+        </div>
+        <ul>
+            <div id="hj">
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-home'></i>
+                        <span class="side_item"><a href="home.html">Home</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-lemon'></i>
+                        <span class="side_item"><a href="fruits.html">Fruits</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="side_header_nav side_list">
+                        <i class='bx bxs-fridge'></i>
+                        <span class="side_item"><a href="vegetables.html">Vegetables</a></span>
+                    </div>
+                </li>
+            </div>
+            <li>
+                <div class="side_list" onclick="toggleCategory()">
+                    <i class='bx bxs-category'></i>
+                    <span class="side_item">Category</span>
+                    <i class='bx bxs-down-arrow' id="cat_drop"></i>
+                    <i class='bx bxs-up-arrow' id="cat_up"></i>
+                </div>
+                <div class="Category_list" id="cat_list">
+                    <ul>
+                        <li class="cat_item"><a href="#Dairy">Poultry Products</a></li>
+                        <li class="cat_item"><a href="#Bakery">Bakery & Snacks</a></li>
+                        <li class="cat_item"><a href="#Pantry">Pantry Staples</a></li>
+                        <li class="cat_item"><a href="#Beverages">Beverages</a></li>
+                        <li class="cat_item"><a href="#Household">Household Essentials</a></li>
+                        <li class="cat_item"><a href="#Kitchenware">Kitchenware & Utensils</a></li>
+                        <li class="cat_item"><a href="#Baking">Cooking Essentials</a></li>
+                        <li class="cat_item"><a href="#Kitchen">Kitchen Appliances </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="side_list" onclick="toggleFilter()">
+                    <i class='bx bx-filter-alt'></i>
+                    <span class="side_item">Filters</span>
+                    <i class='bx bxs-down-arrow' id="fil_drop"></i>
+                    <i class='bx bxs-up-arrow' id="fil_up"></i>
+                </div>
+                <div class="filter_list" id="fil_list">
+                    <ul>
+                        <li class="filter_item price_toggle" onclick="togglePriceRange()">
+                            <span>Price Range</span>
+                            <i class='bx bxs-down-arrow' id="price_drop"></i>
+                            <i class='bx bxs-up-arrow' id="price_up" style="display: none;"></i>
+                        </li>
+                        <div class="price_range" id="price_range">
+                            <li class="price_item"><span><input type="checkbox" class="price_check">Below ₹500</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹500 - ₹1000</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹1000 - ₹2000</span></li>
+                            <li class="price_item"><span><input type="checkbox" class="price_check">₹2000 and above</span></li>
+                        </div>
+                        <li class="filter_item rating_toggle" onclick="toggleRating()">
+                            <span>Rating</span>
+                            <i class='bx bxs-down-arrow' id="rating_drop"></i>
+                            <i class='bx bxs-up-arrow' id="rating_up" style="display: none;"></i>
+                        </li>
+                        <div class="rating_range" id="rating_range">
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">1 Star</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">2 Stars</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">3 Stars</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">4 Stars</span></li>
+                            <li class="rating_item"><span><input type="checkbox" class="rating_check">5 Stars</span></li>
+                        </div>
+                        <li class="filter_item nutrition_toggle" onclick="toggleNutritionalValue()">
+                            <span>Energy Efficiency</span>
+                            <i class='bx bxs-down-arrow' id="nutrition_drop"></i>
+                            <i class='bx bxs-up-arrow' id="nutrition_up" style="display: none;"></i>
+                        </li>
+                        <div class="nutrition_range" id="nutrition_range">
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">1 star</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">2 star</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">3 star</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">4 star</span></li>
+                            <li class="nutrition_item"><span><input type="checkbox" class="nutrition_check">5 star</span></li>
+                        </div>
+                    </ul>
+                </div>
+            </li> <li>
+                <div class="side_list">
+                    <i class='bx bxs-offer'></i>
+                    <a href="#offer"><span class="side_item">Special Offers</span></a>
+                </div>
+            </li>
+            <li>
+                <div class="side_list">
+                    <i class='bx bxs-objects-horizontal-left'></i>
+                    <a href="#popular"><span class="side_item">Popular Items</span></a>
+                </div>
+            </li>
+            <li>
+                <div class="side_list">
+                    <i class='bx bx-log-out'></i>
+                    <span class="side_item">Log out</span>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <div class="main_content">
+        <header class="header">
+            <div class="search_box">
+                <div class="search_bar">
+                    <i class='bx bx-search'></i>
+                    <input type="text" class="search_input" placeholder="Search your needs...">
+                    <button class="search_btn">Search</button>
+                </div>
+            </div>
+            <div class="header_nav" id="header_navi">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="fruits.html">Fruits</a></li>
+                        <li><a href="vegetables.html">Vegetables</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="hero_section">
+            <div class="hero_description">
+                <h1>Elevate Your Kitchen,<br> Simplify Your Meals</h1>
+                <h3>The Right Tools and Ingredients for Every Culinary Adventure</h3>
+                <p>Discover a range of kitchen appliances designed to make cooking effortless and enjoyable. 
+                   From the freshest groceries to time-saving appliances, we provide everything you need to create delicious meals with ease. 
+                   Step into a world where quality meets convenience, all at your fingertips.</p>
+            </div>
+            
+            <div class="hero_image">
+                <img src="images/Kitcg-removebg-preview.png" alt="">
+            </div>
+        </section>
+        <section class="our_products">
+            <h1 class="our_title">Our Products</h1>
+            <section class="product_section" id="popular">
+                <h1 class="product_title">Popular Items</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/milk.jpg" class="product_image">
+                        <img src="images/milk1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Milk</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">50</span> 
+                                <span class="original-price">40 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cooking.jpg" alt="" class="product_image">
+                        <img src="images/Cooking1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cooking Oils</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Rice.jpg" class="product_image">
+                        <img src="images/Rice1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Rice</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">48</span> 
+                                <span class="original-price">43.2 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                   
+                    <div class="product_item">
+                        <img src="images/chilly1.jpg" alt="" class="product_image">
+                        <img src="images/chilly.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Chilly Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">80</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <section class="product_section" id="offer">
+                <h1 class="product_title">Todays Special Offers</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/atta.jpg" alt="" class="product_image">
+                        <img src="images/atta1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Atta</h4>
+                            <p>
+                                <span class="offer-text">Offer 27%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">82</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product_item">
+                        <img src="images/gar.jpg" alt="" class="product_image">
+                        <img src="images/gar1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Garamasala</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">210 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/pepper.jpg" alt="" class="product_image">
+                        <img src="images/pepper1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pepper Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">240 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/honey.jpg" alt="" class="product_image">
+                        <img src="images/honey1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Honey</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">900</span> 
+                                <span class="original-price">720 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/soft.jpg" alt="" class="product_image">
+                        <img src="images/soft1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Soft Drinks</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">150</span> 
+                                <span class="original-price">75 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cleaning Supplies.jpg" class="product_image">
+                        <img src="images/Cleaning Supplies1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cleaning Essentials</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">800 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Laundry Products1.jpg" alt="" class="product_image">
+                        <img src="images/Laundry Products.jpeg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Laundry Products</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">350</span> 
+                                <span class="original-price">175 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/plate1.jpg" class="product_image">
+                        <img src="images/plate.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Plates & Bowls</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">3000</span> 
+                                <span class="original-price">1500 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </section> 
+            <section class="product_section" id="Dairy">
+                <h1 class="product_title">Poultry Products</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/milk.jpg" class="product_image">
+                        <img src="images/milk1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Milk</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">50</span> 
+                                <span class="original-price">40 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/curd" alt="" class="product_image">
+                        <img src="images/curd1.jpeg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Curd</h4>
+                            <p>
+                                <span class="offer-text">Offer 15%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">60</span> 
+                                <span class="original-price">51 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cheese.jpg" alt="" class="product_image">
+                        <img src="images/Cheese1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cheese</h4>
+                            <p>
+                                <span class="offer-text">Offer 27%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">82</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Butter.jpeg" alt="" class="product_image">
+                        <img src="images/Butter1.jpeg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Butter</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Yogurt.jpg" alt="" class="product_image">
+                        <img src="images/Yogurt1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Yogurt</h4>
+                            <p>
+                                <span class="offer-text">Offer 40%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">120</span> 
+                                <span class="original-price">72 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Eggs.jpg" alt="" class="product_image">
+                        <img src="images/Eggs1.jpg" alt="Swiss Chard Hover" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Eggs</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">10</span> 
+                                <span class="original-price">7 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Heavy Cream" alt="" class="product_image">
+                        <img src="images/Heavy Cream1.jpg" alt="Swiss Chard Hover" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Heavy Cream</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">200</span> 
+                                <span class="original-price">180 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Ghee.jpg" alt="" class="product_image">
+                        <img src="images/Ghee1.jpg" alt="Swiss Chard Hover" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Ghee</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">225 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>  
+            <section class="product_section" id="Bakery">
+                <h1 class="product_title">Bakery & Snacks</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Bread.jpg" class="product_image">
+                        <img src="images/Bread1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Bread</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">48</span> 
+                                <span class="original-price">43.2 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cakes.jpg" alt="" class="product_image">
+                        <img src="images/Cakes1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cake</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">320 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Biscuits.jpg" alt="" class="product_image">
+                        <img src="images/Biscuits1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Biscuits</h4>
+                            <p>
+                                <span class="offer-text">Offer 27%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">82</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Chips.jpg" alt="" class="product_image">
+                        <img src="images/Chips1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Chips</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">60</span> 
+                                <span class="original-price">53 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>  
+            <section class="product_section" id="Pantry">
+                <h1 class="product_title">Pantry Staples</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Rice.jpg" class="product_image">
+                        <img src="images/Rice1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Rice</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">48</span> 
+                                <span class="original-price">43.2 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Pasta.jpeg" class="product_image">
+                        <img src="images/Pasta1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pasta</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">70</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/atta.jpg" alt="" class="product_image">
+                        <img src="images/atta1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Atta</h4>
+                            <p>
+                                <span class="offer-text">Offer 27%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">82</span> 
+                                <span class="original-price">60 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cooking.jpg" alt="" class="product_image">
+                        <img src="images/Cooking1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cooking Oils</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/chilly1.jpg" alt="" class="product_image">
+                        <img src="images/chilly.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Chilly Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">80</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/turmeric.jpg" alt="" class="product_image">
+                        <img src="images/turmeric1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Turmeric Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">80</span> 
+                                <span class="original-price">70 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/cor.jpg" alt="" class="product_image">
+                        <img src="images/cor1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Coriander Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">90 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/gar.jpg" alt="" class="product_image">
+                        <img src="images/gar1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Garamasala</h4>
+                            <p>
+                                <span class="offer-text">Offer 30%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">210 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/pepper.jpg" alt="" class="product_image">
+                        <img src="images/pepper1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pepper Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">300</span> 
+                                <span class="original-price">240 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/honey.jpg" alt="" class="product_image">
+                        <img src="images/honey1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Honey</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">900</span> 
+                                <span class="original-price">720 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/ketchup.jpg" alt="" class="product_image">
+                        <img src="images/ketup1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Sauces</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">80 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/salt.jpg" alt="" class="product_image">
+                        <img src="images/salt1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Salt</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">30</span> 
+                                <span class="original-price">27 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Beverages">
+                <h1 class="product_title">Beverages</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/coffee.jpg" class="product_image">
+                        <img src="images/coffee1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Coffee Powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">250</span> 
+                                <span class="original-price">225 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/tea" alt="" class="product_image">
+                        <img src="images/tea1" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Tea powder</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">250</span> 
+                                <span class="original-price">200 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/soft.jpg" alt="" class="product_image">
+                        <img src="images/soft1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Soft Drinks</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">150</span> 
+                                <span class="original-price">75 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/ener1.jpg" alt="" class="product_image">
+                        <img src="images/enery.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Energy Drinks</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">100</span> 
+                                <span class="original-price">90 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Household">
+                <h1 class="product_title">Household Essentials</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Cleaning Supplies.jpg" class="product_image">
+                        <img src="images/Cleaning Supplies1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cleaning Essentials</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">800 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/dish1.jpg" alt="" class="product_image">
+                        <img src="images/dish.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Dish Wash</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">50</span> 
+                                <span class="original-price">45 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Laundry Products1.jpg" alt="" class="product_image">
+                        <img src="images/Laundry Products.jpeg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Laundry Products</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">350</span> 
+                                <span class="original-price">175 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Tissues.jpg" alt="" class="product_image">
+                        <img src="images/Tissues1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Tissues</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">50</span> 
+                                <span class="original-price">45 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Kitchenware">
+                <h1 class="product_title">Kitchenware & Utensils</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/plate1.jpg" class="product_image">
+                        <img src="images/plate.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Plates & Bowls</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">3000</span> 
+                                <span class="original-price">1500 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/glass1.jpg" alt="" class="product_image">
+                        <img src="images/glass.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Glasses & Cups</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">2000</span> 
+                                <span class="original-price">1600 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Cutlery.jpg" alt="" class="product_image">
+                        <img src="images/Cutlery1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Cutlery</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">500 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Containers.jpg" alt="" class="product_image">
+                        <img src="images/container1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Storage Containers</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">500</span> 
+                                <span class="original-price">450 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Baking">
+                <h1 class="product_title">Baking & Cooking Essentials</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/bake1.jpg" class="product_image">
+                        <img src="images/bake.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Baking Tins</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1500</span> 
+                                <span class="original-price">750 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Pots.jpg" alt="" class="product_image">
+                        <img src="images/Pots1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pots & Pans</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">3000</span> 
+                                <span class="original-price">2400 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Pressure Cookers.jpg" alt="" class="product_image">
+                        <img src="images/Pressure Cookers1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Pressure Cookers</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">1000</span> 
+                                <span class="original-price">750 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Measuring Cups.jpg" alt="" class="product_image">
+                        <img src="images/Measuring Cups1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Measuring Cups</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">400</span> 
+                                <span class="original-price">360 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section class="product_section" id="Kitchen">
+                <h1 class="product_title">Kitchen Appliances</h1>
+                <div class="product_container">
+                    <div class="product_item">
+                        <img src="images/Blenders.jpg" class="product_image">
+                        <img src="images/Blenders1.jpg" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Blenders</h4>
+                            <p>
+                                <span class="offer-text">Offer 50%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">4500</span> 
+                                <span class="original-price">2250 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Mixers1.jpg" alt="" class="product_image">
+                        <img src="images/Mixers.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Mixers</h4>
+                            <p>
+                                <span class="offer-text">Offer 20%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">4000</span> 
+                                <span class="original-price">3200 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/Kettles1.jpg" alt="" class="product_image">
+                        <img src="images/Kettles.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Kettles</h4>
+                            <p>
+                                <span class="offer-text">Offer 25%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">2000</span> 
+                                <span class="original-price">1500 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <img src="images/coffeemaker.jpg" alt="" class="product_image">
+                        <img src="images/c1.jpg" alt="" class="hover_image">
+                        <div class="product_detail">
+                            <h4>Coffee Maker</h4>
+                            <p>
+                                <span class="offer-text">Offer 10%</span> 
+                                <span class="price-text">RS:</span> 
+                                <span class="discounted-price">4000</span> 
+                                <span class="original-price">3600 /-</span>
+                            </p>
+                            <button class="product_button">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+        </section>
+        
+    </div>
+    <script src="common.js"></script>
+</body>
+</html>
