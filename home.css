@@ -7,6 +7,8 @@
     padding:0px;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body{
@@ -94,13 +96,13 @@ body{
     color: white;
 }
 
-@media(min-width:700px)
+@media(min-width:1000px)
 {
     .bx{
         display: none;
     }
 }
-@media(max-width:700px)
+@media(max-width:1000px)
 {
     .navigation-op nav{
         display: none;
@@ -276,5 +278,130 @@ body{
     }
     #b1{
         margin-top: 50px;
+    }
+}
+
+
+
+/* footer styling */
+
+footer {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: #001109;
+    color: white;
+    padding-bottom: 20px; 
+}
+.footer_container{
+    margin-left: 8rem;
+    width:90%;
+    height:400px;
+}
+.footer_data{
+    padding-top: 1rem;
+    width:100%;
+    height: 90%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:60px;
+}
+.footer_data h2{
+    margin-bottom: .3em;
+}
+.footer_data h4{
+    font-size: .9rem;
+    margin-bottom: .4em;
+}
+.follow ul li ,
+.contact ul li{
+    list-style: none;
+  }
+  
+.follow ul li span {
+    display: inline-block;
+    align-items: center; 
+  }
+  
+  .follow  ul li i {
+    font-size: 20px;
+    vertical-align: middle;
+    display: inline;
+    margin-right: 5px; 
+  }
+  
+  
+.about,
+.contact,
+.follow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer_copy{
+    color: white;
+    display: flex;
+    margin-left: 25rem;
+    width: 100%;
+    height: 10%;
+}
+
+
+@media(max-width:950px)
+{
+  
+    .footer_container{
+        height: auto;
+        margin-left: 4rem;
+    }
+    .footer_copy{
+        margin-left: 17rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:680px)
+{
+    .footer_data{
+        grid-template-columns: 1fr;
+        margin-left: 16px;
+    }
+    .footer_container{
+        height: auto;
+        margin-left: 0px;
+    }
+    .about p{
+        max-width: 55ch;
+    }
+    
+    .footer_copy{
+        margin-top: 10px;
+        margin-left: 180px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:450px)
+{
+    .footer_data{
+        grid-template-columns: 1fr;
+        margin-left: 16px;
+    }
+    .footer_container{
+        height: auto;
+        margin-left: 0px;
+    }
+    .about p{
+        max-width: 35ch;
+    }
+    .contact ul li:nth-child(3)
+    {
+        max-width: 27ch;
+    }
+    .footer_copy{
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
     }
 }
